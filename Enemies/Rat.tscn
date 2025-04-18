@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://4lnpcoww1wsd"]
+
+[ext_resource type="Script" uid="uid://dg0pxqlpsy67o" path="res://Enemies/rat.gd" id="1_vjrkh"]
+[ext_resource type="Texture2D" uid="uid://cwuc4lgrk1xh3" path="res://assets/enemies/rat.png" id="1_wnlcw"]
+[ext_resource type="Resource" uid="uid://biwhebat76sw5" path="res://Enemies/enemy_rat.tres" id="2_o5d2l"]
+[ext_resource type="Script" uid="uid://efodvrmru24y" path="res://Enemies/EnemyStats.gd" id="3_bq17a"]
+
+[node name="Rat" type="Node2D"]
+script = ExtResource("1_vjrkh")
+stats = ExtResource("2_o5d2l")
+
+[node name="EnemyStats" type="Node2D" parent="."]
+script = ExtResource("3_bq17a")
+
+[node name="Rat" type="Sprite2D" parent="."]
+position = Vector2(4, -16)
+texture = ExtResource("1_wnlcw")

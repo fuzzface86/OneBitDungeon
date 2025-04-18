@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5yf4lo4srohe"]
+
+[ext_resource type="Texture2D" uid="uid://nwbgh8pjabx1" path="res://assets/backgrounds/tavern.png" id="1_a8ya8"]
+[ext_resource type="Script" uid="uid://csyi1vxa21vu3" path="res://scripts/tavern_scene.gd" id="1_cukuv"]
+[ext_resource type="FontFile" uid="uid://cw2ivh6bxoae5" path="res://assets/fonts/QuinqueFive.otf" id="2_kbbmk"]
+[ext_resource type="Script" uid="uid://c52kyjx33uaxo" path="res://scripts/main.gd" id="3_cukuv"]
+
+[node name="TavernScene" type="Node2D"]
+script = ExtResource("1_cukuv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -65.0
+offset_top = -51.0
+offset_right = 65.0
+offset_bottom = 24.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -13)
+rotation = 0.355875
+zoom = Vector2(9, 8)
+
+[node name="Tavern" type="Sprite2D" parent="."]
+position = Vector2(0, -27)
+texture = ExtResource("1_a8ya8")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 7.0
+offset_right = 62.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Back"
+script = ExtResource("3_cukuv")

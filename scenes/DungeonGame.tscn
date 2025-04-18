@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcq5faslw1kx4"]
+
+[ext_resource type="Script" uid="uid://c78xtuqx138ht" path="res://characters/hero.gd" id="1_eex4s"]
+[ext_resource type="FontFile" uid="uid://cw2ivh6bxoae5" path="res://assets/fonts/QuinqueFive.otf" id="1_sbh17"]
+[ext_resource type="Theme" uid="uid://cxs7re3oybvmb" path="res://themes/font_theme.tres" id="2_b5eav"]
+[ext_resource type="Script" uid="uid://efodvrmru24y" path="res://Enemies/EnemyStats.gd" id="2_y1tpe"]
+[ext_resource type="PackedScene" uid="uid://bw5b248u6k4qr" path="res://scenes/ui/MessagePanel.tscn" id="5_v7r5v"]
+[ext_resource type="Script" uid="uid://bw4kfnvg81pfe" path="res://scripts/HeroData.gd" id="5_y1tpe"]
+
+[node name="DungeonGame" type="Node2D"]
+script = ExtResource("1_eex4s")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -65.0
+offset_top = -85.0
+offset_right = 65.0
+offset_bottom = 59.0
+color = Color(0, 0, 0, 1)
+
+[node name="EnemySprite" type="Sprite2D" parent="."]
+position = Vector2(0, -31)
+script = ExtResource("2_y1tpe")
+name = &"EnemySprite"
+base_max_hp = null
+base_attack = null
+base_defense = null
+base_speed = null
+xp_reward = null
+gold_reward = null
+loot_table = null
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeroStatsPanel" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -10.0
+offset_right = 57.0
+offset_bottom = -3.0
+theme = ExtResource("2_b5eav")
+script = ExtResource("5_y1tpe")
+
+[node name="Name" type="Label" parent="UI/HeroStatsPanel"]
+layout_mode = 2
+text = "Name"
+
+[node name="HP" type="Label" parent="UI/HeroStatsPanel"]
+layout_mode = 2
+text = "HP"
+
+[node name="MP" type="Label" parent="UI/HeroStatsPanel"]
+layout_mode = 2
+text = "MP"
+
+[node name="EnemyUI" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -77.0
+offset_right = 22.0
+offset_bottom = -68.0
+
+[node name="EnemyName" type="Label" parent="UI/EnemyUI"]
+layout_mode = 2
+theme = ExtResource("2_b5eav")
+text = "Enemy"
+
+[node name="EnemyHP" type="Label" parent="UI/EnemyUI"]
+layout_mode = 2
+theme = ExtResource("2_b5eav")
+text = "HP"
+
+[node name="BattleOptions" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 4.0
+offset_right = 35.0
+offset_bottom = 44.0
+columns = 2
+
+[node name="AttackButton" type="Button" parent="UI/BattleOptions"]
+layout_mode = 2
+theme = ExtResource("2_b5eav")
+theme_override_fonts/font = ExtResource("1_sbh17")
+theme_override_font_sizes/font_size = 5
+text = "Attack"
+
+[node name="UseItemButton" type="Button" parent="UI/BattleOptions"]
+layout_mode = 2
+theme = ExtResource("2_b5eav")
+theme_override_fonts/font = ExtResource("1_sbh17")
+theme_override_font_sizes/font_size = 5
+text = "Item"
+
+[node name="MagicButton" type="Button" parent="UI/BattleOptions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sbh17")
+theme_override_font_sizes/font_size = 5
+text = "Magic"
+
+[node name="RunButton" type="Button" parent="UI/BattleOptions"]
+layout_mode = 2
+theme = ExtResource("2_b5eav")
+theme_override_fonts/font = ExtResource("1_sbh17")
+theme_override_font_sizes/font_size = 5
+text = "Run"
+
+[node name="MessagePanel" parent="UI" instance=ExtResource("5_v7r5v")]
+visible = false
+layout_mode = 1
+offset_left = -64.0
+offset_right = -64.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -13)
+rotation = 0.355875
+zoom = Vector2(9, 8)

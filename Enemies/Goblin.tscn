@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://clfy86k7rnnta"]
+
+[ext_resource type="Script" uid="uid://idduwso2r34p" path="res://Enemies/Goblin.gd" id="1_0045i"]
+[ext_resource type="Texture2D" uid="uid://ck7p4rlydddws" path="res://assets/enemies/goblin.png" id="2_b46np"]
+[ext_resource type="Resource" uid="uid://n3aqj6kar60k" path="res://Enemies/goblinstats.tres" id="2_scx53"]
+
+[node name="Goblin" type="Node2D"]
+script = ExtResource("1_0045i")
+stats = ExtResource("2_scx53")
+
+[node name="Goblin" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("2_b46np")
