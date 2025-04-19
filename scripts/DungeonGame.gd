@@ -7,6 +7,12 @@ var enemy_scenes = [
 ]
 
 var current_enemy = null
+var enemy_pool = []
+
+func _ready():
+    for scene in enemy_scenes:
+        var instance = scene.instantiate()
+        enemy_pool.append(instance)
 
 func _ready():
 	# Button hookup
