@@ -1,0 +1,316 @@
+[gd_scene load_steps=9 format=3 uid="uid://d11lim1u2e24i"]
+
+[ext_resource type="Script" uid="uid://xwy0e6xh3bue" path="res://gameplay-scene/game-logic.gd" id="1_n2enm"]
+[ext_resource type="Texture2D" uid="uid://iava6i78j3dn" path="res://assets/shadowjack copy.png" id="2_1jfn3"]
+[ext_resource type="FontFile" uid="uid://cpwm7d3lrhrkk" path="res://assets/PixelifySans-Regular.ttf" id="2_dl2ym"]
+[ext_resource type="Theme" uid="uid://cxs7re3oybvmb" path="res://themes/font_theme.tres" id="2_kegfm"]
+[ext_resource type="FontFile" uid="uid://ddmd7pp0hamna" path="res://assets/PublicPixel.ttf" id="2_sviuc"]
+
+[sub_resource type="Animation" id="Animation_1h22c"]
+resource_name = "HitAnimationD"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DealerHitMarker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(91, 100), Vector2(91, 200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DealerHitMarker:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.490196, 1, 0.454902, 1), Color(0.490196, 1, 0.454902, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4r27c"]
+resource_name = "HitAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHitMarker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(91, 900), Vector2(91, 800)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerHitMarker:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.490196, 1, 0.454902, 1), Color(0.490196, 1, 0.454902, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6250x"]
+_data = {
+&"HitAnimationD": SubResource("Animation_1h22c"),
+&"HitAnimationP": SubResource("Animation_4r27c")
+}
+
+[node name="Gameplay" type="Control"]
+layout_mode = 3
+anchor_right = 6.037
+anchor_bottom = 4.529
+scale = Vector2(0.166284, 0.224489)
+script = ExtResource("1_n2enm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.983
+offset_top = 5.0
+offset_right = 10.0
+offset_bottom = 0.479004
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerHand" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 535.228
+offset_top = 2218.37
+offset_right = 535.228
+offset_bottom = 2218.37
+scale = Vector2(0.4, 0.4)
+alignment = 1
+
+[node name="Buttons" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.831977
+anchor_top = 0.391376
+anchor_right = 1.00265
+anchor_bottom = 0.892685
+offset_left = -0.000244141
+offset_top = -0.00012207
+offset_right = -272.403
+offset_bottom = -2053.61
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.52409, 2.38715)
+theme = ExtResource("2_kegfm")
+theme_override_constants/margin_left = -3
+theme_override_constants/margin_top = -2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Hit" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 25
+text = "HIT"
+
+[node name="Stand" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 25
+text = "STAND"
+
+[node name="OptimalMove" type="Button" parent="Buttons/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 25
+text = "OPTIMAL
+
+MOVE
+"
+
+[node name="Cards" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.152
+anchor_top = 0.776
+anchor_right = 0.843
+anchor_bottom = 0.98
+offset_left = -0.840027
+offset_top = 7.91998
+offset_right = -24.5599
+offset_bottom = -10.4
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_bottom = 45
+
+[node name="DealerScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -868.92
+offset_right = -2002.98
+offset_bottom = -752.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+
+[node name="PlayerScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144
+anchor_top = 0.509
+anchor_right = 0.242
+anchor_bottom = 0.538
+offset_left = -0.437134
+offset_top = 0.949463
+offset_right = -0.915222
+offset_bottom = -0.137939
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+
+[node name="PlayerHitMarker" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.083
+anchor_bottom = 0.151
+offset_left = 120.0
+offset_top = 2241.0
+offset_right = -16.5783
+offset_bottom = 1664.48
+theme_override_colors/font_color = Color(0.490196, 1, 0.454902, 1)
+theme_override_fonts/font = ExtResource("2_dl2ym")
+theme_override_font_sizes/font_size = 80
+text = "hit!"
+
+[node name="DealerHitMarker" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.083
+anchor_bottom = 0.151
+offset_left = 114.0
+offset_top = 1817.0
+offset_right = -22.5783
+offset_bottom = 1240.48
+theme_override_colors/font_color = Color(0.490196, 1, 0.454902, 1)
+theme_override_fonts/font = ExtResource("2_dl2ym")
+theme_override_font_sizes/font_size = 80
+text = "hit!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6250x")
+}
+autoplay = "HitAnimationD"
+
+[node name="WhoseTurn" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.053
+anchor_bottom = 0.029
+offset_left = 2423.56
+offset_top = 2213.92
+offset_right = 2698.79
+offset_bottom = 2202.83
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 56
+text = "Player's
+Turn"
+
+[node name="WinnerText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2128.89
+offset_top = 1327.46
+offset_right = 2488.89
+offset_bottom = 1450.46
+scale = Vector2(0.961564, 1.06579)
+theme_override_colors/font_color = Color(0.431373, 1, 0.403922, 1)
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 60
+text = "PLAYER
+WINS"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WinnerText"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2164.97
+offset_top = 1519.01
+offset_right = 2412.97
+offset_bottom = 1607.01
+theme_override_constants/h_separation = 9
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 40
+text = "PLAY
+AGAIN?"
+alignment = 0
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.97
+offset_left = 2958.79
+offset_top = 2298.55
+offset_right = -64.1938
+offset_bottom = -1811.85
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.556863, 0.494118, 1)
+theme_override_fonts/font = ExtResource("2_sviuc")
+theme_override_font_sizes/font_size = 32
+text = "EXIT"
+
+[node name="ShadowjackCopy" type="Sprite2D" parent="."]
+position = Vector2(1629.74, 1817.46)
+scale = Vector2(25.1006, 24.8215)
+texture = ExtResource("2_1jfn3")
+
+[node name="Hands" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.051
+anchor_top = 0.306
+anchor_right = 0.389
+anchor_bottom = 0.387
+offset_left = -58.259
+offset_top = 1.56079
+offset_right = -374.132
+offset_bottom = -115.614
+scale = Vector2(1.5, 1.5)
+
+[node name="DealerHand" type="HBoxContainer" parent="Hands"]
+layout_mode = 2
+offset_right = 1562.0
+offset_bottom = 579.0
+scale = Vector2(0.4, 0.4)
+alignment = 1
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Hit" to="." method="_on_hit_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Stand" to="." method="_on_stand_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/OptimalMove" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

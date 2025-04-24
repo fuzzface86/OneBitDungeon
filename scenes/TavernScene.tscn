@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5yf4lo4srohe"]
+
+[ext_resource type="Texture2D" uid="uid://nwbgh8pjabx1" path="res://assets/backgrounds/tavern.png" id="1_a8ya8"]
+[ext_resource type="Script" uid="uid://csyi1vxa21vu3" path="res://scripts/tavern_scene.gd" id="1_cukuv"]
+[ext_resource type="FontFile" uid="uid://cw2ivh6bxoae5" path="res://assets/fonts/QuinqueFive.otf" id="2_kbbmk"]
+[ext_resource type="Texture2D" uid="uid://mclqiljvkyuc" path="res://assets/ui/panel1.png" id="5_ipqkr"]
+[ext_resource type="Theme" uid="uid://cummcjlt13yxb" path="res://assets/ui/buttons.tres" id="6_2hgu6"]
+
+[node name="TavernScene" type="Node2D"]
+script = ExtResource("1_cukuv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_right = 162.0
+offset_bottom = 549.0
+scale = Vector2(3.36471, 1.75222)
+color = Color(0, 0, 0, 1)
+
+[node name="Tavern" type="Sprite2D" parent="."]
+position = Vector2(267, 382.188)
+scale = Vector2(4.20312, 7.6594)
+texture = ExtResource("1_a8ya8")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 318.0
+offset_top = 541.0
+offset_right = 350.0
+offset_bottom = 556.0
+scale = Vector2(5.54278, 6.01269)
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Back"
+
+[node name="Shop" type="Button" parent="."]
+offset_left = 178.0
+offset_top = 539.0
+offset_right = 210.0
+offset_bottom = 554.0
+scale = Vector2(3.22763, 5.27695)
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Shop"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 543.0
+offset_right = 43.0
+offset_bottom = 558.0
+scale = Vector2(4.55629, 4.68031)
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Play"
+
+[node name="Panel1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(169, 750)
+scale = Vector2(2.38875, 7.4787)
+texture = ExtResource("5_ipqkr")
+
+[node name="Menu" type="VBoxContainer" parent="Panel1"]
+anchors_preset = -1
+anchor_left = 0.00634348
+anchor_top = 0.0624999
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.812
+offset_top = -16.0
+offset_right = 16.188
+offset_bottom = 13.0
+theme_override_constants/separation = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Drink" type="Button" parent="Panel1/Menu"]
+custom_minimum_size = Vector2(-9, 0)
+layout_mode = 2
+theme = ExtResource("6_2hgu6")
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Drink: 5G"
+
+[node name="Drink2" type="Button" parent="Panel1/Menu"]
+layout_mode = 2
+theme = ExtResource("6_2hgu6")
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Sm Potion: 5G"
+
+[node name="Drink3" type="Button" parent="Panel1/Menu"]
+layout_mode = 2
+theme = ExtResource("6_2hgu6")
+theme_override_fonts/font = ExtResource("2_kbbmk")
+theme_override_font_sizes/font_size = 5
+text = "Back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel1"]
+visible = false
+offset_left = -61.0
+offset_top = -13.0
+offset_right = 60.0
+offset_bottom = 14.0
+theme_override_fonts/normal_font = ExtResource("2_kbbmk")
+theme_override_font_sizes/normal_font_size = 5
+text = "Welcome, Stay and have a drink. "
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(271, 479)
