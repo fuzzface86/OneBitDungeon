@@ -1,0 +1,213 @@
+[gd_scene load_steps=11 format=3 uid="uid://crpgwcdlksd4q"]
+
+[ext_resource type="Script" uid="uid://bv7lymdvx782a" path="res://scripts/intro.gd" id="1_aqbct"]
+[ext_resource type="FontFile" uid="uid://ddmd7pp0hamna" path="res://assets/fonts/PublicPixel.ttf" id="2_hc7eg"]
+[ext_resource type="Texture2D" uid="uid://b7qxun6457f8i" path="res://assets/backgrounds/splash.png" id="3_aqbct"]
+[ext_resource type="Texture2D" uid="uid://b01sxn3ed0jus" path="res://assets/enemies/bitlord_face.png" id="4_capyo"]
+[ext_resource type="Texture2D" uid="uid://gik6v3808qc6" path="res://assets/ui/panel2.png" id="5_b2a04"]
+[ext_resource type="FontFile" uid="uid://djuidka172usa" path="res://assets/fonts/NES.tres" id="6_r2s4q"]
+[ext_resource type="AudioStream" uid="uid://d2ci8ebhau8tu" path="res://assets/intromusic copy.wav" id="7_b2a04"]
+
+[sub_resource type="Animation" id="Animation_ywiat"]
+length = 0.45
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(104, 372)]
+}
+
+[sub_resource type="Animation" id="Animation_aqbct"]
+resource_name = "scroll"
+length = 45.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 31.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(57, 361), Vector2(45, -1550)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Splash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333334, 34.6333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BitlordFace:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(24.6273, 27.0333, 34.2415),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(24.6192, 27.0332, 34.2415),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 27.0332, 34.2415),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkji7"]
+_data = {
+&"RESET": SubResource("Animation_ywiat"),
+&"scroll": SubResource("Animation_aqbct")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_aqbct")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = -7.0
+offset_right = 646.0
+offset_bottom = 361.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 372.0
+offset_right = 626.0
+offset_bottom = 1745.0
+theme_override_fonts/font = ExtResource("2_hc7eg")
+theme_override_font_sizes/font_size = 24
+text = "In an age before memory units and save-scumming,
+heroes rose to fame and fortune from dungeons' dust —
+only to be forgotten.
+
+Their fates stuck in time, their victories never won.
+Heroes lost in the broken code of a failed world.
+
+And in the absence of heroes,
+the Bitlord rose.
+
+A glitch in the fabric of the universe.
+A tyrant of corrupted dreams.
+
+He feeds on failed quests.
+He rewrites history in static, binary code and shadows.
+
+Now, in the darkest region of a discarded memory chip,
+a single white pixel emerges from the void.
+
+You are the last echo of a hero who never reached Level 20.
+
+Reclaim your legacy —
+before the Bitlord deletes YOU for good."
+autowrap_mode = 3
+justification_flags = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mkji7")
+}
+autoplay = "scroll"
+
+[node name="Splash" type="Sprite2D" parent="."]
+position = Vector2(319, 183)
+scale = Vector2(4.07422, 4.66406)
+texture = ExtResource("3_aqbct")
+
+[node name="BitlordFace" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(317, 109)
+scale = Vector2(5.6172, 5.01562)
+texture = ExtResource("4_capyo")
+
+[node name="Panel2" type="Sprite2D" parent="."]
+position = Vector2(317.75, 267.5)
+scale = Vector2(4.06641, 0.914063)
+texture = ExtResource("5_b2a04")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 136.0
+offset_top = 229.0
+offset_right = 537.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("6_r2s4q")
+theme_override_font_sizes/font_size = 19
+text = "\"Ah... another stray pixel, clinging to forgotten code.
+Come then — let me unweave your mind, one bit at a time.\""
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource("7_b2a04")
+autoplay = true

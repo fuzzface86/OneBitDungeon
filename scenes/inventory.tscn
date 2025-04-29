@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjffb2r65r1sm"]
+
+[ext_resource type="Script" uid="uid://d3dvwv2wqpgy2" path="res://scenes/inventory.gd" id="1_ty45s"]
+[ext_resource type="Theme" uid="uid://cummcjlt13yxb" path="res://assets/ui/buttons.tres" id="2_53g1v"]
+[ext_resource type="FontFile" uid="uid://cw2ivh6bxoae5" path="res://assets/fonts/QuinqueFive.otf" id="3_yyk2a"]
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_ty45s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 641.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 577.0
+offset_top = 318.0
+offset_right = 627.0
+offset_bottom = 341.0
+theme = ExtResource("2_53g1v")
+theme_override_fonts/font = ExtResource("3_yyk2a")
+theme_override_font_sizes/font_size = 5
+text = "Back"

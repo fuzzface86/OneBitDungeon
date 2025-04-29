@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://crkyyhgii3tb8"]
+
+[ext_resource type="Script" uid="uid://c52kyjx33uaxo" path="res://scripts/main.gd" id="1_choun"]
+[ext_resource type="PackedScene" uid="uid://bilmxh2rsdddc" path="res://characters/Hero.tscn" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dat72gly7xc2t" path="res://assets/backgrounds/floor.png" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://cy78xqr153opu" path="res://assets/backgrounds/ceiling.png" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://clwak0yonqd2r" path="res://assets/ui/backpack_icon.png" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://doah7yqhh01a3" path="res://assets/ui/dungeon_icon.png" id="5_tipki"]
+[ext_resource type="Texture2D" uid="uid://kbhh4e56fkab" path="res://assets/ui/backpack_hover.png" id="6_trceg"]
+[ext_resource type="Texture2D" uid="uid://dkjxlp7drhdot" path="res://assets/ui/dungeon_hover.png" id="8_a8y0u"]
+[ext_resource type="FontFile" uid="uid://cw2ivh6bxoae5" path="res://assets/fonts/QuinqueFive.otf" id="8_tipki"]
+[ext_resource type="Texture2D" uid="uid://drk0sd7dh5bwd" path="res://assets/ui/tavern.png" id="9_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://q1alrbgebau5" path="res://assets/ui/tavern_hover.png" id="10_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://vjbwud33d20i" path="res://assets/ui/camp.png" id="11_muem4"]
+[ext_resource type="Texture2D" uid="uid://cn255a3ht6w3x" path="res://assets/ui/camp_hover.png" id="12_dp3eg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_choun")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 153.0
+offset_bottom = 54.0
+scale = Vector2(4.17691, 6.67416)
+color = Color(0, 0, 0, 1)
+
+[node name="Hero" parent="." instance=ExtResource("1_sugp2")]
+position = Vector2(312, 261)
+scale = Vector2(5.43727, 5.56096)
+
+[node name="Ceiling" type="Sprite2D" parent="."]
+position = Vector2(323, 116)
+scale = Vector2(4.96875, 5.83371)
+texture = ExtResource("3_tbgi4")
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(322, 259)
+scale = Vector2(5.03125, 3.48367)
+texture = ExtResource("2_jyhfs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 100.0
+offset_top = 284.0
+offset_right = 182.0
+offset_bottom = 300.0
+scale = Vector2(5.45355, 4.39736)
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="BackpackButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_o6xl0")
+texture_hover = ExtResource("6_trceg")
+
+[node name="GameButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_tipki")
+texture_hover = ExtResource("8_a8y0u")
+
+[node name="TavernButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_jkv2x")
+texture_hover = ExtResource("10_jbj1t")
+
+[node name="CampButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_muem4")
+texture_hover = ExtResource("12_dp3eg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(323, 180)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 19.0
+offset_right = 259.0
+offset_bottom = 27.0
+scale = Vector2(4.58226, 3.8388)
+theme_override_fonts/font = ExtResource("8_tipki")
+theme_override_font_sizes/font_size = 6
+text = "Snaggy"
