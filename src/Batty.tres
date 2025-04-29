@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cgvljd6fqenrc"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c0htf6tp0xipt" path="res://assets/enemies/bat.png" id="2_kvsvy"]
+
+[resource]
+script = ExtResource("1")
+name = "Bat"
+texture = ExtResource("2_kvsvy")
+health = 15
+damage = 5
+enemy_xp = 5
+enemy_gold = 3
+enemy_defense = 3

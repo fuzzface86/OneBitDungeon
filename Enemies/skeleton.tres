@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://drjnqr6omiyeb"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_uqsom"]
+[ext_resource type="Texture2D" uid="uid://yy2pshvh41q8" path="res://assets/enemies/skeleton.png" id="2_hjgok"]
+
+[resource]
+script = ExtResource("1_uqsom")
+name = "Skeleton"
+texture = ExtResource("2_hjgok")
+health = 10
+damage = 5
+enemy_xp = 3
+enemy_gold = 2
+enemy_defense = 1

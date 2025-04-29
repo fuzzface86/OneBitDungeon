@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://gvpin2yt573m"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_oawwk"]
+[ext_resource type="Texture2D" uid="uid://8gsnehejmq0" path="res://assets/enemies/beholder.png" id="2_auo1o"]
+
+[resource]
+script = ExtResource("1_oawwk")
+name = "Beholder"
+texture = ExtResource("2_auo1o")
+health = 35
+damage = 5
+enemy_xp = 5
+enemy_gold = 5
+enemy_defense = 3

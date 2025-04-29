@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bv82slr7tg5v1"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_3d8r3"]
+[ext_resource type="Texture2D" uid="uid://b60nirttjdtuk" path="res://assets/enemies/orc.png" id="2_tg2lp"]
+
+[resource]
+script = ExtResource("1_3d8r3")
+name = "Orc"
+texture = ExtResource("2_tg2lp")
+health = 30
+damage = 7
+enemy_xp = 3
+enemy_gold = 3
+enemy_defense = 3

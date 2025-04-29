@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bmgjgvy65wssy"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_p30tr"]
+[ext_resource type="Texture2D" uid="uid://clj0wqtvc31v" path="res://assets/enemies/zombie.png" id="2_juywk"]
+
+[resource]
+script = ExtResource("1_p30tr")
+name = "Zombie"
+texture = ExtResource("2_juywk")
+health = 17
+damage = 6
+enemy_xp = 3
+enemy_gold = 3
+enemy_defense = 1

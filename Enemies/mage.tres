@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://coccnus86vu5g"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_vvo6k"]
+[ext_resource type="Texture2D" uid="uid://byfxwhxff6ieh" path="res://assets/enemies/mage.png" id="2_cqelg"]
+
+[resource]
+script = ExtResource("1_vvo6k")
+name = "Mage"
+texture = ExtResource("2_cqelg")
+health = 40
+damage = 8
+enemy_xp = 5
+enemy_gold = 3
+enemy_defense = 3

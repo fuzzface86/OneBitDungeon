@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d4fn38d0njbjv"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_jlpne"]
+[ext_resource type="Texture2D" uid="uid://ct35n22e5wym5" path="res://assets/enemies/crab.png" id="2_m8ikl"]
+
+[resource]
+script = ExtResource("1_jlpne")
+name = "Crab"
+texture = ExtResource("2_m8ikl")
+health = 10
+damage = 4
+enemy_xp = 2
+enemy_gold = 2
+enemy_defense = 4

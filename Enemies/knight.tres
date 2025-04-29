@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dhdnvrjl0mjn5"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_ec1rm"]
+[ext_resource type="Texture2D" uid="uid://daohhl3u36h6" path="res://assets/enemies/knight.png" id="2_33cnd"]
+
+[resource]
+script = ExtResource("1_ec1rm")
+name = "Knight"
+texture = ExtResource("2_33cnd")
+health = 30
+damage = 8
+enemy_xp = 5
+enemy_gold = 3
+enemy_defense = 6

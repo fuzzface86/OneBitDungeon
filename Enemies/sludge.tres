@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dj3b508nu0rs1"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_qse30"]
+[ext_resource type="Texture2D" uid="uid://c1i1x62cgas0b" path="res://assets/enemies/sludge.png" id="2_joffp"]
+
+[resource]
+script = ExtResource("1_qse30")
+name = "Sludge"
+texture = ExtResource("2_joffp")
+health = 12
+damage = 3
+enemy_xp = 2
+enemy_gold = 2
+enemy_defense = 4

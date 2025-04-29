@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ba8ckta31x3k6"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_ao52k"]
+[ext_resource type="Texture2D" uid="uid://c0htf6tp0xipt" path="res://assets/enemies/bat.png" id="2_8pnq5"]
+
+[resource]
+script = ExtResource("1_ao52k")
+name = "Bat"
+texture = ExtResource("2_8pnq5")
+health = 10
+damage = 2
+xp_reward = 5
+enemy_gold = 1
+enemy_defense = 1
+loot_table = [{
+"Chance": "50",
+"Item: ": "\"Potion\""
+}, {
+"Chance": "100",
+"Item": "Gold"
+}]

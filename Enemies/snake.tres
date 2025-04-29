@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bywup0pgbaf3k"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_w7oph"]
+[ext_resource type="Texture2D" uid="uid://pow1odd1tesq" path="res://assets/enemies/snake.png" id="2_6spyo"]
+
+[resource]
+script = ExtResource("1_w7oph")
+name = "Snake"
+texture = ExtResource("2_6spyo")
+health = 15
+damage = 5
+enemy_xp = 5
+enemy_gold = 3
+enemy_defense = 2

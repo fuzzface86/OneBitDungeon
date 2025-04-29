@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cgn5cxy0jnebi"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_r5nmy"]
+[ext_resource type="Texture2D" uid="uid://cksdbb4blm3r7" path="res://assets/enemies/minotuar.png" id="2_m03md"]
+
+[resource]
+script = ExtResource("1_r5nmy")
+name = "Minotuar"
+texture = ExtResource("2_m03md")
+health = 30
+damage = 8
+enemy_xp = 5
+enemy_gold = 3
+enemy_defense = 4

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://uevniwl20efj"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_t70cq"]
+[ext_resource type="Texture2D" uid="uid://cayrjxwkrme5e" path="res://assets/enemies/spider.png" id="2_70uaq"]
+
+[resource]
+script = ExtResource("1_t70cq")
+name = "Spider"
+texture = ExtResource("2_70uaq")
+health = 8
+damage = 3
+enemy_xp = 1
+enemy_gold = 1
+enemy_defense = 1

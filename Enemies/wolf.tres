@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cetoxyengei4n"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_u4qur"]
+[ext_resource type="Texture2D" uid="uid://b5qxqew5e7ose" path="res://assets/enemies/wolf.png" id="2_rxqbm"]
+
+[resource]
+script = ExtResource("1_u4qur")
+name = "Wolf"
+texture = ExtResource("2_rxqbm")
+health = 20
+damage = 6
+enemy_xp = 3
+enemy_gold = 3
+enemy_defense = 4

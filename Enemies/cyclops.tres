@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ctyfh65x64ai6"]
+
+[ext_resource type="Script" uid="uid://bktcgpo1cg1ng" path="res://src/BaseEnemy.gd" id="1_1yqti"]
+[ext_resource type="Texture2D" uid="uid://cy1jgryekqos2" path="res://assets/enemies/cyclops.png" id="2_1vpaj"]
+
+[resource]
+script = ExtResource("1_1yqti")
+name = "Cyclops"
+texture = ExtResource("2_1vpaj")
+health = 25
+damage = 8
+enemy_xp = 5
+enemy_gold = 3
+enemy_defense = 3
